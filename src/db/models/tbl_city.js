@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     stateId: DataTypes.INTEGER
   }, {});
   tbl_city.associate = function(models) {
-    // tbl_city.belongsTo(models.tbl_city);
+    tbl_city.hasMany(model.tbl_client, {as: 'clients'});
+    tbl_city.belongsTo(models.tbl_state,{foreignKey:'stateId', as:'state'});
   };
   return tbl_city;
 };
