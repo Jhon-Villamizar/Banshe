@@ -1,0 +1,47 @@
+{
+    "message": "All data",
+    "data": [
+        {
+            "id": 1,
+            "name": "Chile",
+            "createdAt": "2019-11-24T05:56:37.000Z",
+            "updatedAt": "2019-11-24T05:56:37.000Z"
+        },
+        {
+            "id": 2,
+            "name": "Peru",
+            "createdAt": "2019-11-24T05:56:37.000Z",
+            "updatedAt": "2019-11-24T05:56:37.000Z"
+        },
+        {
+            "id": 3,
+            "name": "Ecuador",
+            "createdAt": "2019-11-24T05:56:37.000Z",
+            "updatedAt": "2019-11-24T05:56:37.000Z"
+        },
+        {
+            "id": 4,
+            "name": "Venezuela",
+            "createdAt": "2019-11-24T05:56:37.000Z",
+            "updatedAt": "2019-11-24T05:56:37.000Z"
+        },
+        {
+            "id": 5,
+            "name": "Barbados",
+            "createdAt": "2019-11-24T05:56:37.000Z",
+            "updatedAt": "2019-11-24T05:56:37.000Z"
+        },
+        {
+            "id": 6,
+            "name": "Puerto Rico",
+            "createdAt": "2019-11-24T05:56:37.000Z",
+            "updatedAt": "2019-11-24T05:56:37.000Z"
+        },
+        {
+            "id": 7,
+            "name": "United States",
+            "createdAt": "2019-11-24T05:56:37.000Z",
+            "updatedAt": "2019-11-24T05:56:37.000Z"
+        }
+    ]
+}
