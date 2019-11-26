@@ -10,10 +10,7 @@ export function getByCountryData(req, res, next) {
   try {
     const { countryId } = req.body;
     getByCountry(countryId).then(data => {
-      res.status(200).json({
-        message: 'All data',
-        data: data
-      });
+      res.status(200).json(data);
     }).catch(e => {
       console.log(e);
     });
@@ -30,10 +27,7 @@ export function getByCountryData(req, res, next) {
 export function getAllData(req, res, next) {
   try {
     getAll().then(data => {
-      res.status(200).json({
-        message: 'All data',
-        data: data
-      });
+      res.status(200).json(data);
     }).catch(e => {
       console.log(e);
     });
@@ -53,10 +47,7 @@ export function getOneData(req, res, next) {
   try {
     const { id } = req.body;
     getOne(id).then(data => {
-      res.status(200).json({
-        message: '200',
-        data: data
-      });
+      res.status(200).json( data);
     });
   } catch (e) {
     console.log(e);
@@ -92,8 +83,8 @@ export async function createRegister(req, res, next) {
 
 export async function updateRegister(req, res, next) {
   try {
-    const { status,id } = req.body;
-    await update(id, status)
+    const { name, countryId,id } = req.body;
+    await update(id, name, countryId)
       .then(data => {
         res.json({
           message: 'Updated successfully',

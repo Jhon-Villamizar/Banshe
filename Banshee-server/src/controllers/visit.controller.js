@@ -9,10 +9,7 @@ export function getByClientData(req, res, next) {
   try {
     const { clientId } = req.body;
     getByClient(clientId).then(data => {
-      res.status(200).json({
-        message: 'All data',
-        data: data
-      });
+      res.status(200).json(data);
     }).catch(e => {
       console.log(e);
     });
@@ -29,10 +26,7 @@ export function getByClientData(req, res, next) {
 export function getAllData(req, res, next) {
   try {
     getAll().then(data => {
-      res.status(200).json({
-        message: 'All data',
-        data: data
-      });
+      res.status(200).json(data);
     }).catch(e => {
       console.log(e);
     });
@@ -52,10 +46,7 @@ export function getOneData(req, res, next) {
   try {
     const { id } = req.body;
     getOne(id).then(data => {
-      res.status(200).json({
-        message: '200',
-        data: data
-      });
+      res.status(200).json(data);
     });
   } catch (e) {
     console.log(e);
