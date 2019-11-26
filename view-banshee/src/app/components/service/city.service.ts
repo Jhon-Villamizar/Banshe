@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CityService {
   selectCity: City;
-  cities = {};
+  cities = [];
   readonly URL_API = 'http://localhost:3000/api/cities/';
   constructor(private http: HttpClient) {
     this.selectCity = new City();

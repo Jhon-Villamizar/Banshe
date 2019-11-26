@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StateService {
   selectState: State;
-  states = {};
+  states = [];
   readonly URL_API = 'http://localhost:3000/api/states/';
   constructor(private http: HttpClient) {
     this.selectState = new State();

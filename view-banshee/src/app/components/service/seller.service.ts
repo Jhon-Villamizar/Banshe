@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SellerService {
   selectSeller: Seller;
-  sellers = {};
+  sellers = [];
   readonly URL_API = 'http://localhost:3000/api/sellers/';
   constructor(private http: HttpClient) {
     this.selectSeller = new Seller();

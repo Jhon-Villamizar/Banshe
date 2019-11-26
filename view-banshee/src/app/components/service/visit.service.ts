@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class VisitService {
   selectVisit: Visit;
-  visits = {};
+  visits = [];
   readonly URL_API = 'http://localhost:3000/api/visits/';
   constructor(private http: HttpClient) {
     this.selectVisit = new Visit();

@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ConutryService {
   selectCountry: Country;
-  countries = {};
+  countries = [];
   readonly URL_API = 'http://localhost:3000/api/countries/';
   constructor(private http: HttpClient) {
     this.selectCountry = new Country();

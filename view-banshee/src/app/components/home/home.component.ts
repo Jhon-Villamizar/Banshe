@@ -18,15 +18,14 @@ export class HomeComponent implements OnInit {
     this.clientSevice.getClients()
       .subscribe(res => {
         console.log(res);
-        
-        this.clientSevice.clients = res as {};
+        this.clientSevice.clients = res as [];
       })
   }
 
   
-  registry = false;
-  visits = false;
-  tabla = true;
+  registry = true;
+  visits = true;
+  tabla = false;
   newClient(){
     console.log();
     console.log('new client');

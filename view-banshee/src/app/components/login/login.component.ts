@@ -14,20 +14,18 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.getSellers();
   }
-  login = true;
-  home = false;
+  login = false;
+  home = true;
 
   getSellers() {
     this.sellerService.getSellers()
       .subscribe(res => {
-        this.sellerService.sellers = res as {};
+        this.sellerService.sellers = res as [];
       })
   }
 
   sendLogin(form?: NgForm) {
-    var datos = this.sellerService.sellers.data;
-    console.log(datos);
-    
+    var datos = this.sellerService.sellers;
     datos.forEach(element => {
       if (element.name == form.value.name && element.cc == form.value.cc) {
         this.login = false;

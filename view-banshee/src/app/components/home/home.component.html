@@ -48,9 +48,9 @@
 					  </tr>
 					</thead>
 					<tbody>
-					  <tr>
+					  <tr *ngFor="let client of clientSevice.clients">
 						<th scope="row">1</th>
-						<td>Mark</td>
+						<td>{{client.name}}</td>
 						<td>Otto</td>
 						<td>@mdo</td>
 						<td>

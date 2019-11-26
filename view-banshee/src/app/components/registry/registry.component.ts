@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ConutryService } from '../service/conutry.service';
+import { StateService } from '../service/state.service';
 
 @Component({
   selector: 'app-registry',
@@ -8,10 +10,21 @@ import { NgForm } from '@angular/forms';
 })
 export class RegistryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private countryService: ConutryService, private stateService: StateService) { }
 
   ngOnInit() {
+    this.getAllContries()
   }
+
+  getAllContries(){
+    this.countryService.getCountries()
+      .subscribe(res=>{
+        console.log(res);
+        
+        this.countryService.countries = res as [];
+      })
+  }
+  
   formR = true;
   response = false;
   sendNew(){
