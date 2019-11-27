@@ -2,30 +2,40 @@
     <div class="row">
       <div class="col-md-12">
               <h2 class="text-center my-5">Visit Registration</h2>
-              <form class="row">
+              <form class="row" #visitForm="ngForm" (ngSubmit)="sentVisits(visitForm)">
                   <div class="form-group">
-                      <input id="id" type="hidden" class="form-control" >
+                      <input id="id" type="hidden" class="form-control" name="id" #id="ngModel"
+                      [(ngModel)]="visitService.selectVisit.id">
                   </div>
                   <div class="form-group col-md-3">
-                      <input id="date" type="text" class="form-control" placeholder="Date*">
+                        <input id="clientId" type="number" class="form-control" name="clientId" #clientId="ngModel"
+                        [(ngModel)]="visitService.selectVisit.clientId" placeholder="Visit clientId*"/>
+                    </div>
+                  <div class="form-group col-md-3">
+                      <input id="date" type="text" class="form-control" name="date" #date="ngModel"
+                      [(ngModel)]="visitService.selectVisit.date" placeholder="Date*">
                   </div>
                   <div class="form-group col-md-3">
-                      <input id="representative" type="text" class="form-control" placeholder="Sales Representative*">
+                        <select id="sellerId" type="text" class="form-control" name="sellerId" #sellerId="ngModel"
+                        [(ngModel)]="visitService.selectVisit.sellerId" (change)="selectSeller($event.target.value)">
+                            <option value="null" disabled="true" [selected]="true">Sales Representative</option>
+                            <option *ngFor="let seller of sellerService.sellers" [value]="seller.id">{{seller.name}}</option>
+                        </select>
                   </div>
                   <div class="form-group col-md-3">
-                      <input id="representative" type="text" class="form-control" placeholder="Net*">
+                      <input id="net" type="number" class="form-control" name="net" #net="ngModel"
+                      [(ngModel)]="visitService.selectVisit.net" placeholder="Net*">
                   </div>
                   <div class="form-group col-md-3">
-                      <input id="representative" type="text" class="form-control" placeholder="Client Id*">
-                  </div>
-                  <div class="form-group col-md-3">
-                      <input id="visit" type="number" class="form-control" placeholder="Visits*">
+                      <input id="visitTotal" type="number" class="form-control" name="visitTotal" #visitTotal="ngModel"
+                      [(ngModel)]="visitService.selectVisit.visitTotal" placeholder="Total Visits*">
                   </div>
                   <div class="form-group col-md-12">
-                      <textarea id="descVisit" type="text" class="form-control" placeholder="Visit Description*"></textarea>
+                      <textarea id="description" type="text" class="form-control" name="description" #description="ngModel"
+                      [(ngModel)]="visitService.selectVisit.description" placeholder="Description*"></textarea>
                   </div>
                   <div class="form-group col-md-12">
-                          <button type="submit" class="btn btn-primary" (click)="sendUpdate()">Enviar</button>
+                          <button type="submit" class="btn btn-primary">Enviar</button>
                   </div>
               </form>
       </div>

@@ -2,10 +2,12 @@ import db from '../../database/models/index';
 
 const update = async (id, name, countryId) => {
   return await db.states.update({
-    id, name, countryId
+    "id": id, 
+    "name": name, 
+    "countryId": countryId
   }, {
     where : {
-      id: id
+      "id": id
     }
   }).then(data => {
     return data;

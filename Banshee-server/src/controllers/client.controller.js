@@ -5,7 +5,7 @@ import { update } from '../services/clients/update';
 
 
 
-export function getAllData(req, res, next) {
+export function getAllData(req, res) {
   try {
     getAll().then(data => {
       res.status(200).json(data);
@@ -24,7 +24,7 @@ export function getAllData(req, res, next) {
 };
 
 
-export function getOneData(req, res, next) {
+export function getOneData(req, res) {
   try {
     const { id } = req.body;
     getOne(id).then(data => {
@@ -40,7 +40,7 @@ export function getOneData(req, res, next) {
   }
 }
 
-export async function createRegister(req, res, next) {
+export async function createRegister(req, res) {
   try {
     const { nit, name, address, phone, creditLimit, availableCredit, visitPercentage, description, countryId, stateId, cityId } = req.body;
     create(nit, name, address, phone, creditLimit, availableCredit, visitPercentage, description, countryId, stateId, cityId)
@@ -62,7 +62,7 @@ export async function createRegister(req, res, next) {
   }
 }
 
-export async function updateRegister(req, res, next) {
+export async function updateRegister(req, res) {
   try {
     const { id, nit, name, address, phone, creditLimit, availableCredit, visitPercentage, description, countryId, stateId, cityId } = req.body;
     await update(id, nit, name, address, phone, creditLimit, availableCredit, visitPercentage, description, countryId, stateId, cityId)

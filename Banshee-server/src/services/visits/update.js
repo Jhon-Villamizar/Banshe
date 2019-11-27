@@ -2,10 +2,16 @@ import db from '../../database/models/index';
 
 const update = async (id, date, sellerId, net, visitTotal, description, clientId) => {
   return await db.visits.update({
-    id, date, sellerId, net, visitTotal, description, clientId
+    "id": id, 
+    "date": date, 
+    "sellerId": sellerId, 
+    "net": net, 
+    "visitTotal": visitTotal, 
+    "description": description, 
+    "clientId": clientId
   }, {
     where : {
-      id: id
+      "id": id
     }
   }).then(data => {
     return data;

@@ -23,13 +23,13 @@ export class ClientService {
    * @param id 
    */
   getOne(id: number) {
-    return this.http.post(this.URL_API+'/read', id);
+    return this.http.post(this.URL_API+'read', id);
   }
   /**
    * create new client
    * @param client
    */
   createClient(client: Client) {
-      return this.http.post(this.URL_API+'/create', client);
+      return this.http.post(this.URL_API+'create', client);
   }
 }

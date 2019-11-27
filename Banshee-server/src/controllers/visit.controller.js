@@ -5,7 +5,7 @@ import { update } from '../services/visits/update';
 import { getByClient } from '../services/visits/getByClient';
 
 
-export function getByClientData(req, res, next) {
+export function getByClientData(req, res) {
   try {
     const { clientId } = req.body;
     getByClient(clientId).then(data => {
@@ -23,7 +23,7 @@ export function getByClientData(req, res, next) {
     });
   }
 };
-export function getAllData(req, res, next) {
+export function getAllData(req, res) {
   try {
     getAll().then(data => {
       res.status(200).json(data);
@@ -42,7 +42,7 @@ export function getAllData(req, res, next) {
 };
 
 
-export function getOneData(req, res, next) {
+export function getOneData(req, res) {
   try {
     const { id } = req.body;
     getOne(id).then(data => {
@@ -58,7 +58,7 @@ export function getOneData(req, res, next) {
   }
 }
 
-export async function createRegister(req, res, next) {
+export async function createRegister(req, res) {
   try {
     const { date, sellerId, net, visitTotal, description, clientId } = req.body;
     create(date, sellerId, net, visitTotal, description, clientId)
@@ -80,7 +80,7 @@ export async function createRegister(req, res, next) {
   }
 }
 
-export async function updateRegister(req, res, next) {
+export async function updateRegister(req, res) {
   try {
     const { id, date, sellerId, net, visitTotal, description, clientId } = req.body;
     await update(id, date, sellerId, net, visitTotal, description, clientId)

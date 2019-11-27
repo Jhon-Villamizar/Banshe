@@ -3,7 +3,7 @@ import db from '../../database/models/index';
 const getByState = async (stateId) => {
   return await db.cities.findAll({
     where:{
-      stateId
+      "stateId": stateId
     }
   }).then(data => {
     return data;

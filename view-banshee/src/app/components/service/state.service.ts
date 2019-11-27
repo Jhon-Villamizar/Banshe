@@ -22,6 +22,6 @@ export class StateService {
    * get only states with same countryId 
    */
   getByCountry(countryId: number) {
-    return this.http.post(this.URL_API+'/getByCountry', countryId);
+    return this.http.post(this.URL_API+'getByCountry', countryId);
   }
 }

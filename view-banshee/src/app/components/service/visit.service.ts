@@ -14,6 +14,12 @@ export class VisitService {
   }
 
   /**
+   * get all visits
+   */
+  getVisits(){
+    return this.http.get(this.URL_API);
+  }
+  /**
    * @param clientId 
    * get all visits by client
    */
@@ -25,6 +31,6 @@ export class VisitService {
    * @param visit
    */
   createVisit(visit: Visit) {
-      return this.http.post(this.URL_API, visit);
+      return this.http.post(this.URL_API+'create', visit);
   }
 }

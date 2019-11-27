@@ -5,7 +5,7 @@ import { update } from '../services/cities/update';
 import { getByState } from '../services/cities/getByState'
 
 
-export function getByStateData(req, res, next) {
+export function getByStateData(req, res) {
   try {
     const { stateId } = req.body;
     getByState(stateId).then(data => {
@@ -23,7 +23,7 @@ export function getByStateData(req, res, next) {
     });
   }
 };
-export function getAllData(req, res, next) {
+export function getAllData(req, res) {
   try {
     getAll().then(data => {
       res.status(200).json(data);
@@ -42,7 +42,7 @@ export function getAllData(req, res, next) {
 };
 
 
-export function getOneData(req, res, next) {
+export function getOneData(req, res) {
   try {
     const { id } = req.body;
     getOne(id).then(data => {
@@ -58,7 +58,7 @@ export function getOneData(req, res, next) {
   }
 }
 
-export async function createRegister(req, res, next) {
+export async function createRegister(req, res) {
   try {
     const { name, stateId } = req.body;
     create(name, stateId)
@@ -80,7 +80,7 @@ export async function createRegister(req, res, next) {
   }
 }
 
-export async function updateRegister(req, res, next) {
+export async function updateRegister(req, res) {
   try {
     const { name, stateId,id } = req.body;
     await update(id, name, stateId )

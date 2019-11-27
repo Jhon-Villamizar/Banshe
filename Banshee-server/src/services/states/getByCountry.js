@@ -3,7 +3,7 @@ import db from '../../database/models/index';
 const getByCountry = async (countryId) => {
   return await db.states.findAll({
     where:{
-      countryId
+      "countryId": countryId
     }
   }).then(data => {
     return data;

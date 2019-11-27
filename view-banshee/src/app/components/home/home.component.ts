@@ -23,9 +23,9 @@ export class HomeComponent implements OnInit {
   }
 
   
-  registry = true;
-  visits = true;
-  tabla = false;
+  registry = false;
+  visits = false;
+  tabla = true;
   newClient(){
     console.log();
     console.log('new client');
@@ -38,8 +38,8 @@ export class HomeComponent implements OnInit {
     this.registry = false;
     this.visits = false;
   }
-  newVisit(){
-    console.log('new visit');
+  newVisit(id){
+    console.log(id);
     this.visits = true;
     this.tabla = false;
   }

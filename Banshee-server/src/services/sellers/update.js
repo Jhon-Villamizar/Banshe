@@ -2,10 +2,12 @@ import db from '../../database/models/index';
 
 const update = async (id, name, cc) => {
   return await db.sellers.update({
-    id, name, cc
+    "id": id, 
+    "name": name, 
+    "cc": cc
   }, {
     where : {
-      id: id
+      "id": id
     }
   }).then(data => {
     return data;

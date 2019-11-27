@@ -3,7 +3,7 @@ import db from '../../database/models/index';
 const getByClient = async (clientId) => {
   return await db.visits.findAll({
     where:{
-        clientId
+        "clientId": clientId
     }
   }).then(data => {
     return data;

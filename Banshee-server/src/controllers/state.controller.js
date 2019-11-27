@@ -6,7 +6,7 @@ import { getByCountry } from '../services/states/getByCountry';
 
 
 
-export function getByCountryData(req, res, next) {
+export function getByCountryData(req, res) {
   try {
     const { countryId } = req.body;
     getByCountry(countryId).then(data => {
@@ -24,7 +24,7 @@ export function getByCountryData(req, res, next) {
     });
   }
 };
-export function getAllData(req, res, next) {
+export function getAllData(req, res) {
   try {
     getAll().then(data => {
       res.status(200).json(data);
@@ -43,7 +43,7 @@ export function getAllData(req, res, next) {
 };
 
 
-export function getOneData(req, res, next) {
+export function getOneData(req, res) {
   try {
     const { id } = req.body;
     getOne(id).then(data => {
@@ -59,7 +59,7 @@ export function getOneData(req, res, next) {
   }
 }
 
-export async function createRegister(req, res, next) {
+export async function createRegister(req, res) {
   try {
     const { name, countryId} = req.body;
     create(name, countryId)
@@ -81,7 +81,7 @@ export async function createRegister(req, res, next) {
   }
 }
 
-export async function updateRegister(req, res, next) {
+export async function updateRegister(req, res) {
   try {
     const { name, countryId,id } = req.body;
     await update(id, name, countryId)

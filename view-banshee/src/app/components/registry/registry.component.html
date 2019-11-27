@@ -2,47 +2,64 @@
   <div class="row">
     <div class="col-md-12">
 			<h2 class="text-center my-5">Clients Registration</h2>
-			<form class="row">
+			<form class="row" #registryForm="ngForm" (ngSubmit)="sendRegistry(registryForm)">
 				<div class="form-group">
-					<input id="id" type="hidden" class="form-control" >
+					<input id="id" type="hidden" class="form-control" name="id" #id="ngModel"
+					[(ngModel)]="clientService.selectClient.id" >
 				</div>
 				<div class="form-group col-md-6">
-					<input id="fullname" type="text" class="form-control" placeholder="Full Name*">
+					<input id="name" type="text" class="form-control" name="name" #name="ngModel"
+					[(ngModel)]="clientService.selectClient.name" placeholder="Name*">
 				</div>
 				<div class="form-group col-md-6">
-					<input id="nit" type="text" class="form-control" placeholder="Nit*">
+					<input id="nit" type="text" class="form-control" name="nit" #nit="ngModel"
+					[(ngModel)]="clientService.selectClient.nit" placeholder="Nit*">
 				</div>
 				<div class="form-group col-md-6">
-					<input id="address" type="text" class="form-control" placeholder="Address*">
+					<input id="address" type="text" class="form-control" name="address" #address="ngModel"
+					[(ngModel)]="clientService.selectClient.address" placeholder="Address*">
 				</div>
 				<div class="form-group col-md-6">
-					<input id="phone" type="text" class="form-control" placeholder="Phone*">
+					<input id="phone" type="text" class="form-control" name="phone" #phone="ngModel"
+					[(ngModel)]="clientService.selectClient.phone" placeholder="Phone*">
 				</div>
 				<div class="form-group col-md-4">
-					<input id="city" type="text" class="form-control" placeholder="City*">
+					<select id="countryId" type="text" class="form-control" name="countryId" #countryId="ngModel"
+					[(ngModel)]="clientService.selectClient.countryId" (change)="selectCountry($event.target.value)">
+						<option value="null" disabled="true" [selected]="true">Select Country</option>
+						<option *ngFor="let country of countryService.countries" [value]="country.id">{{country.name}}</option>
+					</select>
 				</div>
 				<div class="form-group col-md-4">
-					<input id="state" type="text" class="form-control" placeholder="State*">
+					<select id="stateId" type="text" class="form-control" name="stateId" #stateId="ngModel"
+					[(ngModel)]="clientService.selectClient.stateId" (change)="selectState($event.target.value)">
+							<option value="null" disabled="true" [selected]="true">Select State</option>
+					</select>
 				</div>
 				<div class="form-group col-md-4">
-					<select id="country" type="text" class="form-control" placeholder="Country*">
-						<option value=""></option>
+					<select id="cityId" type="text" class="form-control" name="cityId" #cityId="ngModel"
+					[(ngModel)]="clientService.selectClient.cityId" (change)="selectCity($event.target.value)">
+							<option value="null" disabled="true" [selected]="true">Select City</option>
 					</select>
 				</div>
 				<div class="form-group col-md-6">
-					<input id="creditlim" type="number" class="form-control" placeholder="Credito Limit*">
+					<input id="creditLimit" type="number" class="form-control" name="creditLimit" #creditLimit="ngModel"
+					[(ngModel)]="clientService.selectClient.creditLimit" placeholder="Credito Limit*">
 				</div>
 				<div class="form-group col-md-6">
-					<input id="avalcredit" type="number" class="form-control" placeholder="Available Credit*">
+					<input id="availableCredit" type="number" class="form-control" name="availableCredit" #availableCredit="ngModel"
+					[(ngModel)]="clientService.selectClient.availableCredit" placeholder="Available Credit*">
 				</div>
 				<div class="form-group col-md-3">
-					<input id="visitsperc" type="number" class="form-control" placeholder="Visit Percentage*">
+					<input id="visitPercentage" type="number" class="form-control" name="visitPercentage" #visitPercentage="ngModel"
+					[(ngModel)]="clientService.selectClient.visitPercentage" placeholder="Visit Percentage*">
                 </div>
                 <div class="form-group col-md-12">
-					<textarea id="description" type="text" class="form-control" placeholder="Client Description*"></textarea>
+					<textarea id="description" type="text" class="form-control" name="description" #description="ngModel"
+					[(ngModel)]="clientService.selectClient.description" placeholder="Client Description*"></textarea>
 				</div>
 				<div class="form-group col-md-12">
-						<button type="submit" class="btn btn-primary" (click)="sendNew()">Enviar</button>
+					<button type="submit" class="btn btn-primary">Enviar</button>
 				</div>
 			</form>
     </div>
