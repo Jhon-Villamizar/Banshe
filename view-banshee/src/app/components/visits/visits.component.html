@@ -7,12 +7,12 @@
                       <input id="id" type="hidden" class="form-control" name="id" #id="ngModel"
                       [(ngModel)]="visitService.selectVisit.id">
                   </div>
-                  <div class="form-group col-md-3">
-                        <input id="clientId" type="number" class="form-control" name="clientId" #clientId="ngModel"
+                  <div class="form-group">
+                        <input id="clientId" type="hidden" class="form-control" name="clientId" #clientId="ngModel"
                         [(ngModel)]="visitService.selectVisit.clientId" placeholder="Visit clientId*"/>
                     </div>
-                  <div class="form-group col-md-3">
-                      <input id="date" type="text" class="form-control" name="date" #date="ngModel"
+                  <div class="form-group">
+                      <input id="date" type="hidden" class="form-control" name="date" #date="ngModel"
                       [(ngModel)]="visitService.selectVisit.date" placeholder="Date*">
                   </div>
                   <div class="form-group col-md-3">
@@ -26,8 +26,8 @@
                       <input id="net" type="number" class="form-control" name="net" #net="ngModel"
                       [(ngModel)]="visitService.selectVisit.net" placeholder="Net*">
                   </div>
-                  <div class="form-group col-md-3">
-                      <input id="visitTotal" type="number" class="form-control" name="visitTotal" #visitTotal="ngModel"
+                  <div class="form-group">
+                      <input id="visitTotal" type="hidden" class="form-control" name="visitTotal" #visitTotal="ngModel"
                       [(ngModel)]="visitService.selectVisit.visitTotal" placeholder="Total Visits*">
                   </div>
                   <div class="form-group col-md-12">

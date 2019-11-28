@@ -1,5 +1,5 @@
 export class Client {
-    constructor(id = null, nit = null, name = '', address = '', phone = '', creditLimit = null, availableCredit = null, visitPercentage = null, description = '', countryId = null, stateId = null, cityId = null) {
+    constructor(id = null, nit = '', name = '', address = '', phone = '', creditLimit = null, availableCredit = null, visitPercentage = null, description = '', countryId = null, stateId = null, cityId = null) {
         this.id = id,
         this.nit = nit,
         this.name = name,
@@ -14,7 +14,7 @@ export class Client {
         this.cityId = cityId
     }
     id: number;
-    nit: number;
+    nit: string;
     name: string;
     address: string;
     phone: string;

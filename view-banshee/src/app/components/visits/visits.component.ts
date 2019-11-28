@@ -13,11 +13,11 @@ export class VisitsComponent implements OnInit {
   constructor(private visitService: VisitService, private sellerService: SellerService) { }
 
   ngOnInit() {
-    this.getAllContries();
+    this.getAllVisits();
     this.getAllSellers();
   }
 
-  getAllContries(){  
+  getAllVisits(){  
     this.visitService.getVisits()
       .subscribe(res=>{
         console.log(res);
@@ -27,7 +27,7 @@ export class VisitsComponent implements OnInit {
   getAllSellers(){
     this.sellerService.getSellers()
       .subscribe(res=>{
-        console.log(res);
+        console.log();
         this.sellerService.sellers = res as [];
       })
   }
@@ -35,17 +35,18 @@ export class VisitsComponent implements OnInit {
   selectSeller(id){
     console.log(id);
   }
-  sentVisits(form?: NgForm){
-    console.log(form.value);
-    this.visitService.createVisit(form.value)
-      .subscribe(res => {
-        console.log(form.value);
-      });
-  }
   formV = true;
   response = false;
-
-  sendUpdate(){
+  sentVisits(form?: NgForm){
+    form.value.clientId = window.localStorage.getItem('id');
+    form.value.date = new Date().toDateString();
+    var dateVisit = this.visitService.visits.length;
+    form.value.visitTotal = dateVisit;
+    console.log(form.value);   
+    // this.visitService.createVisit(form.value)
+    //   .subscribe(res => {
+    //     console.log(form.value);
+    //   });
     this.formV = false;
     this.response = true;
   }

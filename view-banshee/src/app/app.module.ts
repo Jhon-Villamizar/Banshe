@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegistryComponent } from './components/registry/registry.component';
 import { VisitsComponent } from './components/visits/visits.component';
+import { FilterPipe } from './components/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { VisitsComponent } from './components/visits/visits.component';
     LoginComponent,
     HomeComponent,
     RegistryComponent,
-    VisitsComponent
+    VisitsComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
