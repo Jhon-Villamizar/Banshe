@@ -14,12 +14,13 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.getSellers();
   }
-  login = false;
-  home = true;
+  login = true;
+  home = false;
 
   getSellers() {
     this.sellerService.getSellers()
       .subscribe(res => {
+
         this.sellerService.sellers = res as [];
       })
   }

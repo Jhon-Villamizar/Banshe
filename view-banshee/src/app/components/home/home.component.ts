@@ -27,7 +27,13 @@ export class HomeComponent implements OnInit {
   visits = false;
   table = true;
   details = false;
-  newClient(id){
+  newClient(){
+    this.table = false;
+    this.registry = true;
+    document.getElementById('clientDetails').innerHTML = ``;
+    this.visits = false;
+  }
+  newDetails(id){
     this.table = false;
     this.details = true;
     var element = [];
@@ -37,7 +43,7 @@ export class HomeComponent implements OnInit {
       if(element.id == id){
         console.log(element);
         document.getElementById('clientDetails').innerHTML = `
-          <div class="card">
+          <div class="card mt-2" style="box-shadow: 0px 0px 11px 1px rgba(162, 162, 162, 0.18)">
           <h5 class="card-header">Clieints Details</h5>
           <div class="card-body">
             <div class="row">
