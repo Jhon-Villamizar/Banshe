@@ -75,11 +75,12 @@ export class RegistryComponent implements OnInit {
   sendRegistry(form?: NgForm){
     // this.response = true;
     // this.formR = false;
+    form.value.visitPercentage = parseInt(localStorage.getItem('porcentageS'));
     console.log(form.value);
-    this.clientService.createClient(form.value)
-      .subscribe(res => {
-        console.log(form.value);
-      });
+    // this.clientService.createClient(form.value)
+    //   .subscribe(res => {
+    //     console.log(form.value);
+    //   });
   }
    
 }

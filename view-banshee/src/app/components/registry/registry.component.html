@@ -1,81 +1,88 @@
 <div class="container" *ngIf="formR">
   <div class="row">
     <div class="col-md-12">
-			<h2 class="text-center my-5">Clients Registration</h2>
-			<form class="row" #registryForm="ngForm" (ngSubmit)="sendRegistry(registryForm)">
-				<div class="form-group">
-					<input id="id" type="hidden" class="form-control" name="id" #id="ngModel"
-					[(ngModel)]="clientService.selectClient.id" >
-				</div>
-				<div class="form-group col-md-6">
-					<input id="name" type="text" class="form-control" name="name" #name="ngModel"
-					[(ngModel)]="clientService.selectClient.name" placeholder="Name*">
-				</div>
-				<div class="form-group col-md-6">
-					<input id="nit" type="text" class="form-control" name="nit" #nit="ngModel"
-					[(ngModel)]="clientService.selectClient.nit" placeholder="Nit*">
-				</div>
-				<div class="form-group col-md-6">
-					<input id="address" type="text" class="form-control" name="address" #address="ngModel"
-					[(ngModel)]="clientService.selectClient.address" placeholder="Address*">
-				</div>
-				<div class="form-group col-md-6">
-					<input id="phone" type="text" class="form-control" name="phone" #phone="ngModel"
-					[(ngModel)]="clientService.selectClient.phone" placeholder="Phone*">
-				</div>
-				<div class="form-group col-md-4">
-					<select id="countryId" type="text" class="form-control" name="countryId" #countryId="ngModel"
-					[(ngModel)]="clientService.selectClient.countryId" (change)="selectCountry($event.target.value)">
-						<option value="null" disabled="true" [selected]="true">Select Country</option>
-						<option *ngFor="let country of countryService.countries" [value]="country.id">{{country.name}}</option>
-					</select>
-				</div>
-				<div class="form-group col-md-4">
-					<select id="stateId" type="text" class="form-control" name="stateId" #stateId="ngModel"
-					[(ngModel)]="clientService.selectClient.stateId" (change)="selectState($event.target.value)">
-							<option value="null" disabled="true" [selected]="true">Select State</option>
-					</select>
-				</div>
-				<div class="form-group col-md-4">
-					<select id="cityId" type="text" class="form-control" name="cityId" #cityId="ngModel"
-					[(ngModel)]="clientService.selectClient.cityId" (change)="selectCity($event.target.value)">
-							<option value="null" disabled="true" [selected]="true">Select City</option>
-					</select>
-				</div>
-				<div class="form-group col-md-6">
-					<input id="creditLimit" type="number" class="form-control" name="creditLimit" #creditLimit="ngModel"
-					[(ngModel)]="clientService.selectClient.creditLimit" placeholder="Credito Limit*">
-				</div>
-				<div class="form-group col-md-6">
-					<input id="availableCredit" type="number" class="form-control" name="availableCredit" #availableCredit="ngModel"
-					[(ngModel)]="clientService.selectClient.availableCredit" placeholder="Available Credit*">
-				</div>
-				<div class="form-group col-md-3">
-					<input id="visitPercentage" type="number" class="form-control" name="visitPercentage" #visitPercentage="ngModel"
-					[(ngModel)]="clientService.selectClient.visitPercentage" placeholder="Visit Percentage*">
-                </div>
-                <div class="form-group col-md-12">
-					<textarea id="description" type="text" class="form-control" name="description" #description="ngModel"
-					[(ngModel)]="clientService.selectClient.description" placeholder="Client Description*"></textarea>
-				</div>
-				<div class="form-group col-md-12">
-					<button type="submit" class="btn btn-primary">Enviar</button>
-				</div>
-			</form>
+      <div class="card mb-5">
+        <h5 class="card-header">Clients Registration</h5>
+        <div class="card-body">
+          <form class="row" #registryForm="ngForm" (ngSubmit)="sendRegistry(registryForm)">
+            <div class="form-group">
+              <input id="id" type="hidden" class="form-control" name="id" #id="ngModel"
+                [(ngModel)]="clientService.selectClient.id">
+            </div>
+            <div class="form-group col-md-6">
+              <input id="name" type="text" class="form-control" name="name" #name="ngModel"
+                [(ngModel)]="clientService.selectClient.name" placeholder="Name*">
+            </div>
+            <div class="form-group col-md-6">
+              <input id="nit" type="text" class="form-control" name="nit" #nit="ngModel"
+                [(ngModel)]="clientService.selectClient.nit" placeholder="Nit*">
+            </div>
+            <div class="form-group col-md-6">
+              <input id="address" type="text" class="form-control" name="address" #address="ngModel"
+                [(ngModel)]="clientService.selectClient.address" placeholder="Address*">
+            </div>
+            <div class="form-group col-md-6">
+              <input id="phone" type="text" class="form-control" name="phone" #phone="ngModel"
+                [(ngModel)]="clientService.selectClient.phone" placeholder="Phone*">
+            </div>
+            <div class="form-group col-md-4">
+              <select id="countryId" type="text" class="form-control" name="countryId" #countryId="ngModel"
+                [(ngModel)]="clientService.selectClient.countryId" (change)="selectCountry($event.target.value)">
+                <option value="null" disabled="true" [selected]="true">Select Country</option>
+                <option *ngFor="let country of countryService.countries" [value]="country.id">{{country.name}}</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <select id="stateId" type="text" class="form-control" name="stateId" #stateId="ngModel"
+                [(ngModel)]="clientService.selectClient.stateId" (change)="selectState($event.target.value)">
+                <option value="null" disabled="true" [selected]="true">Select State</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <select id="cityId" type="text" class="form-control" name="cityId" #cityId="ngModel"
+                [(ngModel)]="clientService.selectClient.cityId" (change)="selectCity($event.target.value)">
+                <option value="null" disabled="true" [selected]="true">Select City</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <input id="creditLimit" type="number" class="form-control" name="creditLimit" #creditLimit="ngModel"
+                [(ngModel)]="clientService.selectClient.creditLimit" placeholder="Credito Limit*">
+            </div>
+            <div class="form-group col-md-6">
+              <input id="availableCredit" type="number" class="form-control" name="availableCredit"
+                #availableCredit="ngModel" [(ngModel)]="clientService.selectClient.availableCredit"
+                placeholder="Available Credit*">
+            </div>
+            <div class="form-group col-md-3">
+              <input id="visitPercentage" type="number" class="form-control" name="visitPercentage"
+                #visitPercentage="ngModel" [(ngModel)]="clientService.selectClient.visitPercentage"
+                placeholder="Visit Percentage*">
+            </div>
+            <div class="form-group col-md-12">
+              <textarea id="description" type="text" class="form-control" name="description" #description="ngModel"
+                [(ngModel)]="clientService.selectClient.description" placeholder="Client Description*"></textarea>
+            </div>
+            <div class="form-group col-md-12">
+              <button type="submit" class="btn btn-outline-dark float-right">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="container" *ngIf="response">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="jumbotron">
-                <h1 class="display-4">Hello, world!</h1>
-                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                <hr class="my-4">
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-              </div>
-        </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <h1 class="display-4">Hello, world!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+          featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      </div>
     </div>
+  </div>
 </div>

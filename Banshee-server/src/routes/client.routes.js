@@ -4,7 +4,7 @@ const router = Router();
 
 router.get('/', getAllData);
 router.post('/create', createRegister);
-router.put('/update', updateRegister);
+router.post('/update', updateRegister);
 router.post('/read', getOneData);
 
 export default router;

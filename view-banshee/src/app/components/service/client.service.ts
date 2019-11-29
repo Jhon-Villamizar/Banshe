@@ -25,6 +25,9 @@ export class ClientService {
   getOne(id: number) {
     return this.http.post(this.URL_API+'read', id);
   }
+  update(client: Client) {
+    return this.http.put(this.URL_API+'update',client);
+  }
   /**
    * create new client
    * @param client
