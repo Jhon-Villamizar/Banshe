@@ -1,0 +1,54 @@
+-- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: banshee
+-- ------------------------------------------------------
+-- Server version	8.0.18
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `states`
+--
+
+DROP TABLE IF EXISTS `states`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `states` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `countryId` int(11) DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `states`
+--
+
+LOCK TABLES `states` WRITE;
+/*!40000 ALTER TABLE `states` DISABLE KEYS */;
+INSERT INTO `states` VALUES (1,'Región Metropolitana',1,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(2,'Lima',2,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(3,'Distrito Metropolitano de Quito',3,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(4,'Capital District',4,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(5,'Bridgetown',5,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(6,'Caguas',6,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(7,'Florida',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(8,'Texas',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(9,'South Carolina',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(10,'North Carolina',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(11,'Georgia',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(12,'Maine',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(13,'New York',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(14,'Pensilvania',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(15,'Virginia Occidental',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(16,'Ohio',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(17,'Illinois',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(18,'Montana',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(19,'Oregon',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(20,'California',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(21,'Nevada',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(22,'Utah',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(23,'Arizona',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(24,'Colorado',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(25,'Oklahoma',7,'2019-11-26 01:29:19','2019-11-26 01:29:19'),(26,'Connecticut',7,'2019-11-26 01:29:19','2019-11-26 01:29:19');
+/*!40000 ALTER TABLE `states` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-11-29 17:48:39
