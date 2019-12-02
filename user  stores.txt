@@ -1,0 +1,28 @@
+﻿User Stories
+
+
+Narrative:
+As an User, I want to have a view where I can Create, See, Edit, and Delete the basic information of our customers
+
+
+Description:
+We must have a view that contains a form which allow us to create and save the information to our clients, also in the same view allow us to consult their information and edited it if necessary or even deleted the that record
+
+
+Acceptance Criteria:
+* The principal view must contain a form, a table and the necessary actions buttons
+* The form must have the ability to save the following information in the database:
+   * Nit
+   * Full name
+   * Address
+   * Phone
+   * City
+   * State
+   * Country
+   * Credit Limit
+   * Available credit
+   * Visits Percentage
+   * Visits
+* The table must show the above declared info and show the edit actions buttons 
+* The Edit button must charge the info in the form and allow us to edit any field and save the new information
+* Should be a way to display and inform about any error that the application should have
